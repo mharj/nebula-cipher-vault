@@ -1,0 +1,48 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module",
+		"project": ["./backend/tsconfig.json", "./frontend/tsconfig.json"]
+	},
+	"plugins": ["deprecation", "react", "react-hooks", "@typescript-eslint", "prettier", "sonarjs"],
+	"extends": [
+		"standard",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:sonarjs/recommended"
+	],
+	"rules": {
+		"deprecation/deprecation": "error",
+		"camelcase": 1,
+		"@typescript-eslint/no-this-alias": [
+			"error",
+			{
+				"allowedNames": ["self"]
+			}
+		],
+		"@typescript-eslint/no-namespace": 0,
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["warn"],
+		"@typescript-eslint/ban-types": ["warn"],
+		"sonarjs/cognitive-complexity": ["warn"],
+		"@typescript-eslint/no-unused-vars": [
+			"warn",
+			{
+				"argsIgnorePattern": "^_"
+			}
+		]
+	},
+	"ignorePatterns": ["frontend/src/protocol/*", "backend/src/protocol/*", "*-ti.ts"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
+}
