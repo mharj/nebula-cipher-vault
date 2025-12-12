@@ -1,9 +1,9 @@
-import {json, urlencoded, Application} from 'express';
+import {type Application, json, urlencoded} from 'express';
 import * as serverTiming from 'server-timing';
-import {errorMiddleWare} from './middlewares/errorMiddleware';
+import {HttpError} from './lib/http/HttpError';
 import {logger} from './logger';
 import {corsMiddleWare} from './middlewares/corsMiddleware';
-import {HttpError} from './lib/http/HttpError';
+import {errorMiddleWare} from './middlewares/errorMiddleware';
 import {getRouter} from './routes';
 
 export async function setupExpress(app: Application): Promise<void> {
@@ -19,12 +19,12 @@ export async function setupExpress(app: Application): Promise<void> {
 	// set cross origin headers
 	app.use(corsMiddleWare);
 	// broken server-timing module
-	// @ts-ignore
+	// @ts-expect-error
 	app.use(serverTiming());
 
 	app.use('/api', getRouter());
 	// error handling
-	app.use('*', (req, res, next) => {
+	app.use('*', (req, _res, next) => {
 		next(new HttpError(404, `route_not_found: ${req.originalUrl}`, true));
 	});
 	app.use(errorMiddleWare);

@@ -1,14 +1,11 @@
-import * as dotenv from 'dotenv';
-import {ConfigMap, integerParser, env, UrlParser, stringParser} from '@avanio/variable-util';
-import {DockerSecretsConfigLoader, FileConfigLoader} from '@avanio/variable-util-node';
+import {ConfigMap, EnvConfigLoader, integerParser, stringParser, UrlParser} from '@avanio/variable-util';
+import {DockerSecretsConfigLoader, DotEnvLoader, FileConfigLoader} from '@avanio/variable-util-node';
 import {logger} from './logger';
 
-dotenv.config();
-
 const urlParse = new UrlParser({urlSanitize: true});
-const dockerEnv = new DockerSecretsConfigLoader({fileLowerCase: true, isSilent: true, logger}).getLoader;
-const fileEnv = new FileConfigLoader({fileName: './settings.json', type: 'json', logger}).getLoader;
-const loaders = [env(), fileEnv(), dockerEnv()];
+const dockerEnv = new DockerSecretsConfigLoader({fileLowerCase: true, isSilent: true, logger});
+const fileEnv = new FileConfigLoader({fileName: './settings.json', fileType: 'json', logger});
+const loaders = [new DotEnvLoader({}), new EnvConfigLoader(), fileEnv, dockerEnv];
 
 type EnvVariables = {
 	PORT: number;
@@ -16,8 +13,11 @@ type EnvVariables = {
 	ENCRYPTION_KEY: string;
 };
 
-export const envConfig: ConfigMap<EnvVariables> = new ConfigMap<EnvVariables>({
-	PORT: {loaders, parser: integerParser(), defaultValue: 9457, params: {showValue: true}},
-	DATABASE_URL: {loaders, parser: urlParse, params: {showValue: true}, undefinedThrowsError: true},
-	ENCRYPTION_KEY: {loaders, parser: stringParser(), params: {showValue: false}, undefinedThrowsError: true},
-});
+export const envConfig: ConfigMap<EnvVariables> = new ConfigMap<EnvVariables>(
+	{
+		PORT: {parser: integerParser(), defaultValue: 9457, params: {showValue: true}},
+		DATABASE_URL: {parser: urlParse, params: {showValue: true}, undefinedThrowsError: true},
+		ENCRYPTION_KEY: {parser: stringParser(), params: {showValue: false}, undefinedThrowsError: true},
+	},
+	loaders,
+);

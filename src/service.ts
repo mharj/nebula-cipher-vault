@@ -1,6 +1,6 @@
-import {ExpressService} from './services/express';
 import {envConfig} from './env';
 import {logger} from './logger';
+import {ExpressService} from './services/express';
 import './lib/nodejs';
 import {startDatabaseConnection, stopDatabaseConnection} from './db';
 
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'test') {
 	startAll();
 }
 
-process.once('SIGINT', async function () {
+process.once('SIGINT', async () => {
 	logger.debug('SIGINT: Closing services');
 	await expressSrv?.stop();
 	process.exit();
