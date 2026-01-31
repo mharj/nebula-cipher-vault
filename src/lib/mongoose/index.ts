@@ -3,10 +3,10 @@ import {IdentityProviderModel} from '../../schemas/mongoose/IdentityProvider';
 import {SecretKeyModel} from '../../schemas/mongoose/SecretKey';
 import {SecretValueModel} from '../../schemas/mongoose/SecretValue';
 import {IdentityProvider} from '../../types/IdentityProvider';
-import {CreateSecretKey, SecretKey} from '../../types/SecretKey';
+import {SecretKey} from '../../types/SecretKey';
 import {SecretValue} from '../../types/SecretValue';
 import {closeMongooseConnection, startMongooseConnection} from './helppers';
-import {mapToSecretValue} from './mapper';
+import {mapToSecretKey, mapToSecretValue} from './mapper';
 
 export class MongooseDataSource implements IDataSource {
 	private handleIdentityProviderUpdate = new Set<() => void>();
@@ -44,10 +44,10 @@ export class MongooseDataSource implements IDataSource {
 	}
 
 	public async listSecretKeys(): Promise<SecretKey[]> {
-		return (await SecretKeyModel.find()).map<SecretKey>(mapToSecretValue);
+		return (await SecretKeyModel.find()).map<SecretKey>(mapToSecretKey);
 	}
 
-	public async addSecretValue(name: string, secretKey: CreateSecretKey): Promise<void> {
+	public async addSecretValue(name: string, secretKey: SecretValue): Promise<void> {
 		await new SecretKeyModel(secretKey).save();
 	}
 
