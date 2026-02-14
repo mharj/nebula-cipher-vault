@@ -42,7 +42,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "log4js": "^6.9.1",
-    "mongoose": "^9.1.5",
+    "mongoose": "^9.2.1",
     "server-timing": "^3.3.3"
   }
 }

@@ -30,8 +30,8 @@ importers:
         specifier: ^6.9.1
         version: 6.9.1
       mongoose:
-        specifier: ^9.1.5
-        version: 9.1.5
+        specifier: ^9.2.1
+        version: 9.2.1
       server-timing:
         specifier: ^3.3.3
         version: 3.3.3
@@ -156,8 +156,8 @@ packages:
   '@luolapeikko/ts-common@1.1.4':
     resolution: {integrity: sha512-3qawazIvTudj98kAQP8dYqPhjq1dVY9P0gDKwkU7YQ7ptMRgFdYzaOVjshALoBvPDkjP51WNJyRTv2hXQG6DgA==}
 
-  '@mongodb-js/saslprep@1.4.5':
-    resolution: {integrity: sha512-k64Lbyb7ycCSXHSLzxVdb2xsKGPMvYZfCICXvDsI8Z65CeWQzTEKS4YmGbnqw+U9RBvLPTsB6UCmwkgsDTGWIw==}
+  '@mongodb-js/saslprep@1.4.6':
+    resolution: {integrity: sha512-y+x3H1xBZd38n10NZF/rEBlvDOOMQ6LKUTHqr8R9VkJ+mmQOYtJFxIlkkK8fZrtOiL6VixbOBWMbZGBdal3Z1g==}
 
   '@tsconfig/node10@1.0.12':
     resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
@@ -245,8 +245,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  bson@7.1.1:
-    resolution: {integrity: sha512-TtJgBB+QyOlWjrbM+8bRgH84VM/xrDjyBFgSgGrfZF4xvt6gbEDtcswm27Tn9F9TWsjQybxT8b8VpCP/oJK4Dw==}
+  bson@7.2.0:
+    resolution: {integrity: sha512-YCEo7KjMlbNlyHhz7zAZNDpIpQbd+wOEHJYezv0nMYTn4x31eIUM2yomNNubclAt63dObUzKHWsBLJ9QcZNSnQ==}
     engines: {node: '>=20.19.0'}
 
   bytes@3.1.2:
@@ -460,8 +460,8 @@ packages:
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
-  kareem@3.0.0:
-    resolution: {integrity: sha512-RKhaOBSPN8L7y4yAgNhDT2602G5FD6QbOIISbjN9D6mjHPeqeg7K+EB5IGSU5o81/X2Gzm3ICnAvQW3x3OP8HA==}
+  kareem@3.2.0:
+    resolution: {integrity: sha512-VS8MWZz/cT+SqBCpVfNN4zoVz5VskR3N4+sTmUXme55e9avQHntpwpNq0yjnosISXqwJ3AQVjlbI4Dyzv//JtA==}
     engines: {node: '>=18.0.0'}
 
   log4js@6.9.1:
@@ -531,8 +531,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@9.1.5:
-    resolution: {integrity: sha512-N6gypEO+wLmZp8kCYNQmrEWxVMT0KhyHvVttBZoKA/1ngY7aUsBjqHzCPtDgz+i8JAnqMOiEKmuJIDEQu1b9Dw==}
+  mongoose@9.2.1:
+    resolution: {integrity: sha512-fmNLwgct5km7iL1MqvTMncarR1E1TIw2lmc9A4UoDVdS7AQe95K+DnRK0qATkSUdwUC9V/5wlDcqnkQQjbSRkA==}
     engines: {node: '>=20.19.0'}
 
   mpath@0.9.0:
@@ -843,7 +843,7 @@ snapshots:
 
   '@luolapeikko/ts-common@1.1.4': {}
 
-  '@mongodb-js/saslprep@1.4.5':
+  '@mongodb-js/saslprep@1.4.6':
     dependencies:
       sparse-bitfield: 3.0.3
 
@@ -947,7 +947,7 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  bson@7.1.1: {}
+  bson@7.2.0: {}
 
   bytes@3.1.2: {}
 
@@ -1169,7 +1169,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  kareem@3.0.0: {}
+  kareem@3.2.0: {}
 
   log4js@6.9.1:
     dependencies:
@@ -1210,13 +1210,13 @@ snapshots:
 
   mongodb@7.0.0:
     dependencies:
-      '@mongodb-js/saslprep': 1.4.5
-      bson: 7.1.1
+      '@mongodb-js/saslprep': 1.4.6
+      bson: 7.2.0
       mongodb-connection-string-url: 7.0.1
 
-  mongoose@9.1.5:
+  mongoose@9.2.1:
     dependencies:
-      kareem: 3.0.0
+      kareem: 3.2.0
       mongodb: 7.0.0
       mpath: 0.9.0
       mquery: 6.0.0
