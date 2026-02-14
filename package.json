@@ -39,7 +39,7 @@
     "@avanio/variable-util": "^1.2.1",
     "@avanio/variable-util-node": "^1.2.1",
     "@luolapeikko/result-option": "^2.2.0",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "log4js": "^6.9.1",
     "mongoose": "^9.1.5",
