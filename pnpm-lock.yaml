@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)
       '@avanio/variable-util-node':
-        specifier: ^1.2.1
-        version: 1.2.1(@avanio/logger-like@0.2.12)(@avanio/variable-util@1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4))(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)(dotenv@17.2.3)
+        specifier: ^1.3.0
+        version: 1.3.0(@avanio/logger-like@0.2.12)(@avanio/variable-util@1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4))(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)(dotenv@17.2.3)
       '@luolapeikko/result-option':
         specifier: ^2.2.0
         version: 2.2.0
@@ -63,13 +63,12 @@ packages:
   '@avanio/logger-like@0.2.12':
     resolution: {integrity: sha512-XoIRKMBtYmva8ElpC5ccr6JkD2WBzVMV4qTcdTFPNkCAf524IET2mcm923PwfoLinDwEuty08sSEtcsoq68+Lw==}
 
-  '@avanio/variable-util-node@1.2.1':
-    resolution: {integrity: sha512-OIGxPL1WhIZYH63br7iU2caYwg8xB5BtHgKaEcNg8vEXO/dKt7h5FoTl5VhaNIFSNO/ItiFDScbnKYmAKFkr0g==}
-    engines: {node: '>=20'}
+  '@avanio/variable-util-node@1.3.0':
+    resolution: {integrity: sha512-MDwxOhTWx8i8OuDl7VZ0IoqSlaoTjicB7inxAUhrGlDX6K28+fMwyFCU0pcUnzLEANTQKumrOfW5qPNqrRsiUw==}
     peerDependencies:
-      '@avanio/logger-like': '>= 0.1.0'
+      '@avanio/logger-like': '>= 0.0.1'
       '@avanio/variable-util': '>= 1.2.1'
-      '@luolapeikko/result-option': '>= 2.0.0'
+      '@luolapeikko/result-option': '>= 1.0.0'
       '@luolapeikko/ts-common': '>= 1.0.0'
       dotenv: '>= 16.0.0'
 
@@ -775,7 +774,7 @@ snapshots:
 
   '@avanio/logger-like@0.2.12': {}
 
-  '@avanio/variable-util-node@1.2.1(@avanio/logger-like@0.2.12)(@avanio/variable-util@1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4))(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)(dotenv@17.2.3)':
+  '@avanio/variable-util-node@1.3.0(@avanio/logger-like@0.2.12)(@avanio/variable-util@1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4))(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)(dotenv@17.2.3)':
     dependencies:
       '@avanio/logger-like': 0.2.12
       '@avanio/variable-util': 1.2.1(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.2.0)(@luolapeikko/ts-common@1.1.4)
