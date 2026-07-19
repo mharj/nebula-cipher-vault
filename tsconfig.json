@@ -1,11 +1,11 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
+		"module": "node20",
 		"target": "ES2022",
 		"lib": ["ES2022", "dom", "dom.iterable"],
 		"rootDir": "./src",
 		"outDir": "./dist",
-		"moduleResolution": "node",
+		"moduleResolution": "node16",
 		"sourceRoot": "./src",
 		"types": ["node"],
 		// "declaration": true,
