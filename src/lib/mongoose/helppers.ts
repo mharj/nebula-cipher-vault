@@ -1,11 +1,11 @@
 import * as mongoose from 'mongoose';
-import {sleep} from '../dateUtils';
 import {logger} from '../../logger';
+import {sleep} from '../dateUtils';
 import {buildError} from '../errorUtil';
 
 let mongoRetry = true;
 
-mongoose.connection.on('disconnected', async () => {
+mongoose.connection.on('disconnected', () => {
 	logger.warn('mongodb: default disconnected');
 });
 

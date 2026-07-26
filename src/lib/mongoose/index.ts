@@ -1,10 +1,10 @@
-import {IDataSource} from '../../interfaces/IDataSource';
+import type {IDataSource} from '../../interfaces/IDataSource';
 import {IdentityProviderModel} from '../../schemas/mongoose/IdentityProvider';
 import {SecretKeyModel} from '../../schemas/mongoose/SecretKey';
 import {SecretValueModel} from '../../schemas/mongoose/SecretValue';
-import {IdentityProvider} from '../../types/IdentityProvider';
-import {SecretKey} from '../../types/SecretKey';
-import {SecretValue} from '../../types/SecretValue';
+import type {IdentityProvider} from '../../types/IdentityProvider';
+import type {SecretKey} from '../../types/SecretKey';
+import type {SecretValue} from '../../types/SecretValue';
 import {closeMongooseConnection, startMongooseConnection} from './helppers';
 import {mapToSecretKey, mapToSecretValue} from './mapper';
 
@@ -47,7 +47,7 @@ export class MongooseDataSource implements IDataSource {
 		return (await SecretKeyModel.find()).map<SecretKey>(mapToSecretKey);
 	}
 
-	public async addSecretValue(name: string, secretKey: SecretValue): Promise<void> {
+	public async addSecretValue(_name: string, secretKey: SecretValue): Promise<void> {
 		await new SecretKeyModel(secretKey).save();
 	}
 

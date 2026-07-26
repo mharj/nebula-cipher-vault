@@ -1,12 +1,7 @@
 {
-	"watch": [
-		"src",
-		"package.json",
-		"package-lock.json",
-		".env"
-	],
-	"delay": "1500",
-	"ext": "ts",
-	"signal": "SIGINT",
-	"exec": "tsx --inspect=0.0.0.0 --expose-gc --inspect -r source-map-support/register ./src/service.ts"
+  "watch": ["src", "package.json", "package-lock.json", ".env"],
+  "delay": "1500",
+  "ext": "ts",
+  "signal": "SIGINT",
+  "exec": "tsx --inspect=0.0.0.0 --expose-gc --inspect -r source-map-support/register ./src/service.ts"
 }

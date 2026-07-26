@@ -1,8 +1,8 @@
-import {model, Schema, Model, HydratedDocument, Types} from 'mongoose';
-import {SecretValue} from '../../types/SecretValue';
+import {type HydratedDocument, type Model, model, Schema, type Types} from 'mongoose';
+import type {SecretValue} from '../../types/SecretValue';
+
 type SecretValueWithKey = SecretValue & {key: Types.ObjectId};
 type SecretValueModel = Model<SecretValueWithKey>;
-
 
 const schema = new Schema<SecretValueWithKey, SecretValueModel>(
 	{

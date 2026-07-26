@@ -1,5 +1,5 @@
 interface CommonIdentityProvider {
-    uuid: string;
+	uuid: string;
 	name: string;
 	disabled: boolean;
 	createdBy: string;

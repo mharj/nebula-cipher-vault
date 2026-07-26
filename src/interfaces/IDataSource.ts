@@ -1,6 +1,6 @@
-import {IdentityProvider} from '../types/IdentityProvider';
-import {SecretKey} from '../types/SecretKey';
-import {SecretValue} from '../types/SecretValue';
+import type {IdentityProvider} from '../types/IdentityProvider';
+import type {SecretKey} from '../types/SecretKey';
+import type {SecretValue} from '../types/SecretValue';
 
 export interface IDataSource {
 	connect(url: URL): Promise<void>;

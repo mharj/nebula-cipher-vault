@@ -6,7 +6,7 @@ import {corsMiddleWare} from './middlewares/corsMiddleware';
 import {errorMiddleWare} from './middlewares/errorMiddleware';
 import {getRouter} from './routes';
 
-export async function setupExpress(app: Application): Promise<void> {
+export function setupExpress(app: Application): void {
 	logger.info('setup express');
 	// express settings
 	app.set('etag', false);

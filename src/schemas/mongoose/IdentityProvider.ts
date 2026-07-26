@@ -1,5 +1,5 @@
-import {model, Schema, Model, HydratedDocument} from 'mongoose';
-import {IdentityProvider} from '../../types/IdentityProvider';
+import {type HydratedDocument, type Model, model, Schema} from 'mongoose';
+import type {IdentityProvider} from '../../types/IdentityProvider';
 
 type IdentityProviderModel = Model<IdentityProvider>;
 

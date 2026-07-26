@@ -1,9 +1,9 @@
+import type {ILoggerLike} from '@luolapeikko/logger-type';
 import express from 'express';
-import {Server} from 'http';
-import {Loadable} from '../types/Loadable';
+import type {Server} from 'http';
 import {AbstractService} from '../lib/AbstractService';
 import {setupExpress} from '../middleware';
-import {ILoggerLike} from '@luolapeikko/logger-type';
+import type {Loadable} from '../types/Loadable';
 
 export class ExpressService extends AbstractService {
 	private portNumber: Loadable<number>;
@@ -11,7 +11,7 @@ export class ExpressService extends AbstractService {
 	private express: express.Application;
 	private server: undefined | Server;
 	private logger: ILoggerLike | undefined;
-	constructor(portNumber: Loadable<number>, logger?: ILoggerLike) {
+	public constructor(portNumber: Loadable<number>, logger?: ILoggerLike) {
 		super();
 		this.logger = logger;
 		this.portNumber = portNumber;

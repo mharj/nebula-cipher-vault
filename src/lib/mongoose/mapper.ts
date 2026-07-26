@@ -1,7 +1,7 @@
-import { SecretKeyType } from '../../schemas/mongoose/SecretKey';
-import {SecretValueType} from '../../schemas/mongoose/SecretValue';
-import { SecretKey } from '../../types/SecretKey';
-import {SecretValue} from '../../types/SecretValue';
+import type {SecretKeyType} from '../../schemas/mongoose/SecretKey';
+import type {SecretValueType} from '../../schemas/mongoose/SecretValue';
+import type {SecretKey} from '../../types/SecretKey';
+import type {SecretValue} from '../../types/SecretValue';
 
 export function mapToSecretValue(model: SecretValueType): SecretValue {
 	return {
@@ -18,7 +18,6 @@ export function mapToSecretValue(model: SecretValueType): SecretValue {
 		modified: model.modified,
 	};
 }
-
 
 export function mapToSecretKey(model: SecretKeyType): SecretKey {
 	return {

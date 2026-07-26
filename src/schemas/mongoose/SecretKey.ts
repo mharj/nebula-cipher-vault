@@ -1,5 +1,6 @@
-import {model, Schema, Model, HydratedDocument} from 'mongoose';
-import {SecretKey} from '../../types/SecretKey';
+import {type HydratedDocument, type Model, model, Schema} from 'mongoose';
+import type {SecretKey} from '../../types/SecretKey';
+
 type SecretKeyModel = Model<SecretKey>;
 
 const schema = new Schema<SecretKey, SecretKeyModel>(

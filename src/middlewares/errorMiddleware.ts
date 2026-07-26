@@ -1,15 +1,15 @@
-import {ErrorRequestHandler, NextFunction} from 'express';
+import type {ErrorRequestHandler, NextFunction} from 'express';
 import {HttpError} from '../lib/http/HttpError';
 import {logger} from '../logger';
-import {ApiError} from '../types/ApiError';
+import type {ApiError} from '../types/ApiError';
 
-export const errorMiddleWare: ErrorRequestHandler = async (err: Error, req, res, next: NextFunction) => {
+export const errorMiddleWare: ErrorRequestHandler = (err: Error, _req, res, next: NextFunction) => {
 	logger.error(err);
 	if (res.headersSent) {
 		return next(err);
 	}
 	let code = 500;
-	let message: ApiError = {name: err.name, message: err.message};
+	const message: ApiError = {name: err.name, message: err.message};
 	if (err instanceof HttpError) {
 		code = err.statusCode;
 	}

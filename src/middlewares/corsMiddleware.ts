@@ -1,20 +1,19 @@
-import {RequestHandler} from 'express';
+import type {RequestHandler} from 'express';
 
-const allowHosts = [
+const allowHosts = new Set([
 	'http://localhost:3000',
 	'http://localhost:8080',
 	'https://sahara-lan.firebaseapp.com',
 	'https://sahara-auth.firebaseapp.com',
 	'https://luolapeikko.fi',
-];
+]);
 
 export const corsMiddleWare: RequestHandler = (req, res, next) => {
-	const method = req.method && req.method.toUpperCase && req.method.toUpperCase();
 	let {origin} = req.headers;
 	if (Array.isArray(origin)) {
 		origin = origin[0];
 	}
-	if (origin && allowHosts.indexOf(origin) !== -1) {
+	if (origin && allowHosts.has(origin)) {
 		res.set('Access-Control-Allow-Origin', origin);
 		res.set('Access-Control-Allow-Credentials', 'true');
 		res.set('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
@@ -23,8 +22,7 @@ export const corsMiddleWare: RequestHandler = (req, res, next) => {
 		res.set('Access-Control-Max-Age', '86400'); // pre-flight cache time
 		res.set('Vary', 'Origin');
 	}
-	if (method === 'OPTIONS') {
-		res.setHeader('Content-Length', '0');
+	if (req.method === 'OPTIONS') {
 		res.status(204).end();
 	} else {
 		next();
