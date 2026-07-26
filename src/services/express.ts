@@ -3,7 +3,7 @@ import {Server} from 'http';
 import {Loadable} from '../types/Loadable';
 import {AbstractService} from '../lib/AbstractService';
 import {setupExpress} from '../middleware';
-import {ILoggerLike} from '@avanio/logger-like';
+import {ILoggerLike} from '@luolapeikko/logger-type';
 
 export class ExpressService extends AbstractService {
 	private portNumber: Loadable<number>;
