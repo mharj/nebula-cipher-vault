@@ -15,8 +15,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2(@avanio/logger-like@0.2.12)(@avanio/variable-util@1.3.3(@avanio/logger-like@0.2.12)(@luolapeikko/result-option@2.4.0(core-result@0.0.2))(@luolapeikko/ts-common@1.1.4))(@luolapeikko/result-option@2.4.0(core-result@0.0.2))(@luolapeikko/ts-common@1.1.4)(dotenv@17.4.2)
       '@luolapeikko/logger-type':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.1.0
+        version: 0.1.0
       '@luolapeikko/result-option':
         specifier: ^2.4.0
         version: 2.4.0(core-result@0.0.2)
@@ -301,8 +301,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@luolapeikko/logger-type@0.0.1':
-    resolution: {integrity: sha512-hZ1hY0EBFsDfSB85cB4uc/uh6lJvwL5K3dHQ4uAE0T6k8ZFGcxNuSodWo8xlZI3hkUQcnLBxMb3xq8e3pEJRXw==}
+  '@luolapeikko/logger-type@0.1.0':
+    resolution: {integrity: sha512-wwdFJGg1sdGTamueJkXjBx2ydEdnp6ec4wj31u6+qtcdAw1PL7d20ZU3KtpqkJ6O75xRvceaVv1sdFC98Hk/2A==}
 
   '@luolapeikko/result-option@2.4.0':
     resolution: {integrity: sha512-Z+Eug2E0aRgYcpkmGpTWQQwbWcRUVubkVQonwOA72+mQY+UBSh4U4OU7/Rt/p/FWwHrFlUPp/hmxMXYVebxd8w==}
@@ -1158,7 +1158,7 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
-  '@luolapeikko/logger-type@0.0.1': {}
+  '@luolapeikko/logger-type@0.1.0': {}
 
   '@luolapeikko/result-option@2.4.0(core-result@0.0.2)':
     dependencies:
