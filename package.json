@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/mharj/nebula-cipher-vault#readme",
   "devDependencies": {
-    "@biomejs/biome": "2.5.14",
+    "@biomejs/biome": "2.5.15",
     "@types/express": "^5.0.6",
-    "@types/node": "^25.9.8",
+    "@types/node": "^25.9.9",
     "cross-env": "^10.1.0",
     "nodemon": "^3.1.14",
     "tsx": "^4.23.15",
